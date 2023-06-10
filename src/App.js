@@ -57,7 +57,7 @@ const handleType = (e)=> {
       setStartCounting(false);
     }
     if(input === words && index === Task.length-1){
-      setWords("Ho gaya sara so jao !");
+      setWords("Hurray you have nailed it !");
       setInput("");
       e.preventDefault();
       setDone(true);
@@ -82,21 +82,21 @@ const handleType = (e)=> {
     // }
 
   return (
-    <div className="flex items-center flex-col w-screen  h-screen">
-      <h1 className="mt-5 mb-10">Touch Typer</h1>
-      <h3>Level {level}/10</h3>
-      <div className="mb-5 border-solid border-2 border-black w-1/2 p-4 rounded-xl">
-        <p id="para"  >{words}</p>
+    <div className="flex items-center bg-gray-500 flex-col w-screen  h-screen">
+      <h1 className="mt-5 mb-10 text-xl font-bold text-white">Touch Typer</h1>
+      <h3 className="mb-4 text-lg text-white font-semibold">Level {level}/10</h3>
+      <div className="mb-5 border-solid border-2 border-white bg-emerald-400 w-1/2 p-4 rounded-xl">
+        <p id="para" className="text-lg text-white"  >{words}</p>
       </div>
       <textarea
         onChange={handleType}
         // onFocus={Speed}
         onBLur={Results}
-        className="border-solid border-2 border-black w-1/2 p-5 text-xl"
+        className="border-solid border-2 border-white w-1/2 p-5 text-lg rounded-xl"
         value={input}
       ></textarea>
-      <p>{  done ? `Go`:`Accuracy : ${accuracy}%`}</p>
-      <p>Speed : {time} WPM</p>
+      <p className="text-xl mt-5 text-white ">{  done ? `Go`:`Accuracy : ${accuracy}%`}</p>
+    
     </div>
   );
 }
